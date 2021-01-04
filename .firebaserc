@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "maria-web-1f3cf": {
+      "hosting": {
+        "maria-web-site": [
+          "maria-web-1f3cf"
+        ]
+      }
+    }
+  }
+}

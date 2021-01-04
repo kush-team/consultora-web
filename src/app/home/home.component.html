@@ -1,0 +1,19 @@
+<div class="py-12 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div *ngIf="home" class="mt-10" id="about">
+      <app-about [title]="home.title" [description]="home.description" [subtitle]="home.subtitle"></app-about>
+    </div>
+
+    <div class="mt-10" id="services">
+      <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+        <div *ngFor="let service of services | async">
+          <app-service [title]="service.title" [description]="service.description"></app-service>
+        </div>
+      </dl>
+    </div>
+
+    <div class="mt-10" id="contact">
+      <app-contact></app-contact>
+    </div>
+  </div>
+</div>
