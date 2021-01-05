@@ -1,14 +1,18 @@
 module.exports = {
   purge: {
-    enabled: true,
-    content: ['./src/**/*.html', './src/**/*.ts'],
+    //enabled: true,
+    //content: ['./src/**/*.html', './src/**/*.ts'],
   },
-  darkMode: 'media', // or 'media' or 'class'
+  darkMode: "media", // or 'media' or 'class'
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: ["PT Sans", "serif"],
+      serif: ["PT Serif ", "serif"],
+      mono: ["PT Mono", "mono"],
+    },
   },
   variants: {
     extend: {},
   },
   plugins: [],
-}
+};
