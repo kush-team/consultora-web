@@ -158,14 +158,12 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "options": {
             "browserTarget": "maria-web-site:build",
-            "serverTarget": "maria-web-site:server",
-            "externalDependencies": ["@firebase/firestore"]
+            "serverTarget": "maria-web-site:server"
           },
           "configurations": {
             "production": {
               "browserTarget": "maria-web-site:build:production",
-              "serverTarget": "maria-web-site:server:production",
-              "externalDependencies": ["@firebase/firestore"]
+              "serverTarget": "maria-web-site:server:production"
             }
           }
         },

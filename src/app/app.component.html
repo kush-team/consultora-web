@@ -1,8 +1,8 @@
 <app-header></app-header>
 <div class="bg-white">
   <div class="max-w-12xl mx-auto px-4">
-    <section *ngIf="home | async" class="mt-10" id="about">
-      <app-about [title]="(home | async)?.title" [description]="(home | async)?.description" [subtitle]="(home | async)?.subtitle"></app-about>
+    <section *ngFor="let page of pages | async" class="mt-10" id="about">
+      <app-about [title]="page.title" [description]="page.description" [subtitle]="page.subtitle"></app-about>
     </section>
 
     <section class="mx-auto" id="services">
