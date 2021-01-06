@@ -15,6 +15,7 @@ export class AppComponent {
 
   public services!: Observable<any[]>;
   public pages!: Observable<any[]>;
+  public url: string = 'home';
 
   constructor(private firestore: AngularFirestore, @Inject(PLATFORM_ID) private platformId: Object) { }
 
@@ -24,5 +25,11 @@ export class AppComponent {
     }
     this.services = this.firestore.collection('service').valueChanges();
     this.pages = this.firestore.collection('page').valueChanges();
+  }
+
+  public setURL(event: any, url: string): void {
+    if (event.visible) {
+      this.url = url;
+    }
   }
 }

@@ -7,19 +7,27 @@
           <span class="hidden ml-5 font-serif text-2xl font-bold tracking-widest uppercase sm:inline-block">Consultora</span>
         </a>
       </div>
-      <nav class="space-x-10 font-serif md:flex">
-        <a [routerLink]="['/']" fragment="about" class="text-lg font-medium text-gray-500 hover:text-gray-900">
+      <nav class="lg:space-x-10 md:space-x-5 font-serif md:flex">
+        <a [routerLink]="['/']" fragment="about" class="relative text-lg font-medium text-gray-500 hover:text-gray-900" [ngClass]="{'text-indigo-600' : currentFragment == 'about'}">
           Nosotros
-        </a>
-        <a [routerLink]="['/']" fragment="services" class="relative text-lg font-medium text-indigo-600 hover:text-gray-900">
-          Servicios
-          <span class="absolute top-0 right-0 flex w-3 h-3 transform translate-x-3">
+          <span *ngIf="currentFragment == 'about'" class="absolute top-0 right-0 flex w-3 h-3 transform translate-x-3">
             <span class="absolute inline-flex w-full h-full bg-purple-400 rounded-full opacity-75 animate-ping"></span>
             <span class="relative inline-flex w-3 h-3 bg-purple-500 rounded-full"></span>
           </span>
         </a>
-        <a [routerLink]="['/']" fragment="contact" class="text-lg font-medium text-gray-500 hover:text-gray-900">
+        <a [routerLink]="['/']" fragment="services" class="relative text-lg font-medium text-gray-500 hover:text-gray-900" [ngClass]="{'text-indigo-600' : currentFragment == 'services'}">
+          Servicios
+          <span *ngIf="currentFragment == 'services'" class="absolute top-0 right-0 flex w-3 h-3 transform translate-x-3">
+            <span class="absolute inline-flex w-full h-full bg-purple-400 rounded-full opacity-75 animate-ping"></span>
+            <span class="relative inline-flex w-3 h-3 bg-purple-500 rounded-full"></span>
+          </span>
+        </a>
+        <a [routerLink]="['/']" fragment="contact" class="relative text-lg font-medium text-gray-500 hover:text-gray-900" [ngClass]="{'text-indigo-600' : currentFragment == 'contact'}">
           Contacto
+          <span *ngIf="currentFragment == 'contact'" class="absolute top-0 right-0 flex w-3 h-3 transform translate-x-3">
+            <span class="absolute inline-flex w-full h-full bg-purple-400 rounded-full opacity-75 animate-ping"></span>
+            <span class="relative inline-flex w-3 h-3 bg-purple-500 rounded-full"></span>
+          </span>
         </a>
       </nav>
     </div>
