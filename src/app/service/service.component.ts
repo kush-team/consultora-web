@@ -9,6 +9,7 @@ export class ServiceComponent implements OnInit {
 
   @Input() public title: string = "";
   @Input() public description: string = "";
+  @Input() public image: string = "";
 
   constructor() {}
 

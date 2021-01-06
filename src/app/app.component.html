@@ -17,17 +17,17 @@
         <path fill="#ffffff" fill-opacity="1" d="M0,64L720,32L1440,64L1440,320L720,320L0,320Z"></path>
       </svg>
     </section>
-    <section class="hidden md:block">
+    <section class="hidden md:block" data-aos="fade-up">
       <div class="grid max-w-3xl grid-cols-3 gap-6 py-32 mx-auto">
-        <a data-aos="fade-up" [routerLink]="['/']" fragment="about" class="flex flex-col px-4 py-6 mt-2 font-serif text-xl font-bold text-center text-indigo-700 transition-all duration-300 transform bg-white shadow-xl hover:-translate-y-2 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">
+        <a data-aos="fade-up" data-aos-delay=100 [routerLink]="['/']" fragment="about" class="flex flex-col px-4 py-6 mt-2 font-serif text-xl font-bold text-center text-indigo-700 transition-all duration-300 transform bg-white shadow-xl hover:-translate-y-2 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">
           <i class="text-6xl fas fa-users"></i>
           <span class="mt-6 text-4xl">Nosotros</span>
         </a>
-        <a data-aos="fade-up" [routerLink]="['/']" fragment="services" class="flex flex-col px-4 py-6 mt-2 font-serif text-xl font-bold text-center text-indigo-700 transition-all duration-300 transform bg-white shadow-xl hover:-translate-y-2 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">
+        <a data-aos="fade-up" data-aos-delay=200 [routerLink]="['/']" fragment="services" class="flex flex-col px-4 py-6 mt-2 font-serif text-xl font-bold text-center text-indigo-700 transition-all duration-300 transform bg-white shadow-xl hover:-translate-y-2 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">
           <i class="text-6xl fas fa-headset"></i>
           <span class="mt-6 text-4xl ">Servicios</span>
         </a>
-        <a data-aos="fade-up" [routerLink]="['/']" fragment="contact" class="flex flex-col px-4 py-6 mt-2 font-serif text-xl font-bold text-center text-indigo-700 transition-all duration-300 transform bg-white shadow-xl hover:-translate-y-2 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">
+        <a data-aos="fade-up" data-aos-delay=300 [routerLink]="['/']" fragment="contact" class="flex flex-col px-4 py-6 mt-2 font-serif text-xl font-bold text-center text-indigo-700 transition-all duration-300 transform bg-white shadow-xl hover:-translate-y-2 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">
           <i class="text-6xl fas fa-envelope-open-text"></i>
           <span class="mt-6 text-4xl">Contacto</span>
         </a>
@@ -39,12 +39,11 @@
     </section>
 
 
-    <section class="min-h-screen py-32 bg-gray-200 " id="services"
-      data-aos="fade-up" >
+    <section class="min-h-screen py-32 bg-gray-200 " id="services" data-aos="fade-up">
       <h2 class="mb-6 font-serif text-2xl font-bold text-center text-indigo-600 heading md:text-4xl">Nuestros servicios</h2>
-      <dl class="grid gap-8 mx-3 md:mx-auto max-w-7xl md:grid-cols-3">
+      <dl class="grid gap-8 mx-3 md:mx-auto max-w-7xl md:grid-cols-3" data-aos="fade-up">
         <div *ngFor="let service of services | async" class="relative overflow-hidden transition-all duration-300 transform bg-white border-2 border-transparent rounded-lg shadow-xl hover:border-indigo-600 ">
-          <app-service [title]="service.title" [description]="service.description"></app-service>
+          <app-service [title]="service.title" [description]="service.description" [image]="service.image"></app-service>
         </div>
       </dl>
     </section>
