@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
 import * as AOS from 'aos';
 
 @Component({
@@ -15,10 +16,12 @@ export class AppComponent {
   public services!: Observable<any[]>;
   public pages!: Observable<any[]>;
 
-  constructor(private firestore: AngularFirestore) { }
+  constructor(private firestore: AngularFirestore, @Inject(PLATFORM_ID) private platformId: Object) { }
 
   ngOnInit(): void {
-    AOS.init();
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init();
+    }
     this.services = this.firestore.collection('service').valueChanges();
     this.pages = this.firestore.collection('page').valueChanges();
   }
