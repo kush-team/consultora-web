@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ export class AppComponent {
   constructor(private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
+    AOS.init();
     this.services = this.firestore.collection('service').valueChanges();
     this.pages = this.firestore.collection('page').valueChanges();
   }
