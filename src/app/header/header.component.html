@@ -3,7 +3,7 @@
     <div class="flex items-center justify-between py-6 border-b-2 border-gray-100 md:justify-start md:space-x-10">
       <div class="flex justify-start lg:w-0 lg:flex-1">
         <a href="#" class="flex items-center">
-          <img class="w-auto h-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
+          <img class="w-auto h-8 transition-all duration-300 transform" [ngClass]="{'h-9' : currentFragment == 'home'}" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
           <span class="hidden ml-5 font-serif text-2xl font-bold tracking-widest uppercase sm:inline-block">Consultora</span>
         </a>
       </div>
